@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CNIT 133M Index Page</title>
+<!-- Author:   Tatyana Polyakova
+     file: index.html
+     date: 8-20-2020
+     Course: CNIT 133M CCSF Fall 2020
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+// set javascript defination for the button 
+$(document).ready(function(){
+     $("#btn1").click(function(){
+    // set border for image
+       $("img").animate(
+       {
+           borderWidth: "5px",
+        }, 100, function() 
+        {
+            // Animation complete.
+        });
+     // set chanes for h1 heading 
+        $("h1").animate({
+	   "font-size" : "4em"		
+	}, "slow",
+	function(){
+	$("h1").animate({
+		"font-size" : "2em"
+	} , "slow").css("color", "red")
+	}
+	);
+    });
+});
+</script>
+<link rel="stylesheet" href="css/hw1.css">
+</head>
+<body>
+<p>&nbsp;</p>
+<!-- set the area for the  page -->
+<div id="centered">
+<div id="c1">
+<h1>CNIT 133M</h1>
+</div>
+<p style="text-align: left;"><img src="/Images/for3-new.jpg" alt="Picture of Tatyana Polyakova" /> Hi, Everybody, I am Tatyana Polyakova. I am interested in learning computer technology. I love to create website changing &nbsp; &nbsp; &nbsp;the images and the themes.</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">The reasons that I am taking CNIT 133M because mobile web site design is very popular and you need to know mobile website technology if you create websites.</p>
+<div id="c2">
+<h2 style="text-align: center;">Technologies for this class</h2>
+</div>
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>Java Script</li>
+</ul>
+<div>
+<h2 style="text-align: center;">Resources</h2>
+</div>
+<ul>
+<li><a href="https://www.w3schools.com" target="_blank">w3schools.com</a></li>
+</ul>
+<p>This website is THE WORLD'S LARGEST WEB DEVELOPER SITE. You can see and experiment writing code using HTML, CSS, Java Script and also different computer languages ;</p>
+<ul>
+<li><a href="https://www.wpbeginner.com" target="_blank">Wordpress for beginners</a></li>
+</ul>
+<p>This website is explain for beginners and sometimes for advanced users how to create and use Wordpress side. This website has videos &nbsp;and articles that show how to prevent some errors from happening when using Wordpress.</p>
+<br /> <button id="btn1"> CHANGE ME </button></div>
+<p>&nbsp;</p>
+</body>
+</html>
