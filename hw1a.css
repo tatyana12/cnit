@@ -1,0 +1,56 @@
+/* style for the body */
+body {
+   margin: 0;
+   padding: 0;
+   padding-top: 10px;
+   text-align: center;
+}
+
+.clearfix 
+{
+clear: both;
+} 
+/* style for the paragraph */
+p {
+   margin:0 5px 0 5px;
+}
+/* set the square at the center */
+#centered
+{
+   text-align: left;
+   border: 0px;
+   padding: 0;
+   margin: 0 auto;
+   width: 500px;
+   height: 900px;
+   border-style: solid;
+   border-width: 2px;
+}
+/* style for the title heading h1 */
+#c1
+{
+    margin: 0 auto;
+    color: black;
+    text-align: center;
+}
+/* style for the subtitle h2 */
+#c2
+{
+    margin: 0 auto;
+    color: black;
+    text-align: center;
+}
+/* style for the img */
+img {
+   float:left;
+   margin:0 5px 0 5px;
+   border:0px solid  blue;
+}
+/* style for the button */
+#btn1 { 
+   text-align: left;
+   margin-left: 25px;
+   background-color: orange;
+   height: 25px; 
+   width: 100px;
+}
