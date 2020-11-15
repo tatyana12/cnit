@@ -1,83 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<title>CNIT 133M Index Page</title>
-<meta name="description" content="About me learning programming">
-<!-- Author:   Tatyana Polyakova
-     file: index.html
-     date: 8-20-2020
-     Course: CNIT 133M CCSF Fall 2020
--->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-
-
-$(document).ready(function(){
-     $(".button").click(function(){       
-        
-      $("h1").animate(
-       {
-            
-        }, 100, function() 
-        {
-            // Animation complete.
-        });
-
-
-        $("h1").css({"color":" blue"})
-               .animate({fontSize:"3.5em"}, 1000)
-               .animate({fontSize: "2em"}, 1000);  
-       $("img").css({"border-color":" blue",
-                         borderWidth: "5px",  
-                      "border-weight":"1px",
-                      borderWidth: "5px",
-                    "border-style":"solid"});
-     });
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Simple use of Service Worker">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-})
+    <title>A progressive web app (PWA)</title>
+    <script>
+      // Add a global error event listener early on in the page load, to help ensure that browsers
+      // which don't support specific functionality still end up displaying a meaningful message.
+      window.addEventListener('error', function(error) {
+        if (ChromeSamples && ChromeSamples.setStatus) {
+          console.error(error);
+          ChromeSamples.setStatus(error.message + ' (Your browser may not support this feature.)');
+          error.preventDefault();
+        }
+      });
+    </script>
+    <link
+<link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    
+  </head>
 
+  <body>
+<h1>A progressive web app (PWA)</h1>
+<p>This page will demonstrate a basic service worker and the option to install the application</p>
+<h3>Demo with images</h3>
+<p>A progressive web app (PWA) is the set of mobile web application development techniques that entails building apps that feel and look like native ones. Using a web stack (JS, HTML, and CSS), progressive web apps combine a rich functionality and smooth user experience associated with native apps. Simply put, PWA is the web app with the native-app flavor: After the installation, a user clicks on its icon on a device home screen and gets straight to the website.</p>
+<p>Main characteristics of a PWA (Progressive Web Application) as following:
+Full responsiveness and browser compatibility(PWAs work with all browsers and are compatible with any device, regardless of screen size and other specifications).
+Connectivity independence. Progressive web applications can work both offline and on low-quality networks.
+App-like interface. These apps mimic navigation and interactions of native apps.
+ Push notifications. If used as a part of a good messaging strategy, push notifications can keep customers interested, motivating them to open and use an app more. 
+Self-updates. Able to update themselves automatically, apps stay fresh.
+Safety. These apps are served through HTTPS, so unauthorized users can’t access their content.
+Discoverability and easy installation. While search engines classify PWAs as applications, they are not distributed via app stores. These apps can be shared through a URL instead so they’re easily found. The installation is simple and entails visiting a site and adding it to a device home screen.
+</p>
+<p><label for="images">Choose the Image to be shown:</label></p>
+<select id="images">
+<option value="images/lightgold.jpg">lightgold Background</option>
+<option value="images/lightblue.jpg">lightblue Background</option>
+<option value="images/snow.png">Snow Symbol</option>
+</select>
+<p><button id="show">Show Icon Selected</button></p>
+<div id="container">&nbsp;</div>
+<script>// <![CDATA[
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('service-worker.js');
+        }
 
-</script>
-
-
-<link rel="stylesheet" href="hw1a.css">
-</head>
-<body>
-<p>&nbsp;</p>
-<!-- set the area for the  page -->
-<div id="centered">
-<div id="c1">
-<h1>CNIT 133M</h1>
-</div>
-<div class="clearfix">
-<p style="text-align: left;"><img src="for3-new.jpg" alt="Picture of Tatyana Polyakova" /> Hi, Everybody, I am Tatyana Polyakova. I am interested in learning computer technology. I love to create website changing &nbsp; &nbsp; &nbsp;the images and the themes.</p>
-</div>
-<div class="clearfix">
-<p style="text-align: left;">The reasons that I am taking CNIT 133M because mobile web site design is very popular and you need to know mobile website technology if you create websites.</p>
-</div>
-<div id="c2">
-<h2 style="text-align: center;">Technologies for this class</h2>
-</div>
-<ul>
-<li>HTML</li>
-<li>CSS</li>
-<li>Java Script</li>
-</ul>
-<div>
-<h2 style="text-align: center;">Resources</h2>
-</div>
-<ul>
-<li><a href="https://www.w3schools.com" target="_blank" rel="&rdquo;noopener">w3schools</a></li>
-</ul>
-<p>This website is THE WORLD'S LARGEST WEB DEVELOPER SITE. You can see and experiment writing code using HTML, CSS, Java Script and also different computer languages ;</p>
-<ul>
-<li><a href="https://www.wpbeginner.com" target="_blank" rel="&rdquo;noopener">Wordpress for beginners</a></li>
-</ul>
-<p>This website is explain for beginners and sometimes for advanced users how to create and use Wordpress side. This website has videos &nbsp;and articles that show how to prevent some errors from happening when using Wordpress.</p>
-<p><a class="button" href="#">Start animation</a></p>
-<p>&nbsp;</p>
-</div>
+        document.querySelector('#show').addEventListener('click', () => {
+          const iconUrl = document.querySelector('select').selectedOptions[0].value;
+          let imgElement = document.createElement('img');
+          imgElement.src = iconUrl;
+          document.querySelector('#container').appendChild(imgElement);
+        });
+      
+// ]]></script>
 </body>
 </html>
 
